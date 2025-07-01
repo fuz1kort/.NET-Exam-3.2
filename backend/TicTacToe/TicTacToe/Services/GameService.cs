@@ -188,7 +188,6 @@ public class GameService
         {
             var playerId = Guid.NewGuid();
             game.PlayerX = playerId;
-            var playerSymbol = "X";
 
             publishEndpoint.Publish(new GameUpdated
             {
@@ -201,14 +200,13 @@ public class GameService
                 PlayerO = game.PlayerO
             });
 
-            return (playerSymbol, playerId);
+            return ("X", playerId);
         }
 
         if (game.PlayerO == null)
         {
             var playerId = Guid.NewGuid();
             game.PlayerO = playerId;
-            var playerSymbol = "O";
 
             publishEndpoint.Publish(new GameUpdated
             {
@@ -221,7 +219,7 @@ public class GameService
                 PlayerO = game.PlayerO
             });
 
-            return (playerSymbol, playerId);
+            return ("O", playerId);
         }
 
         return (null, null);
