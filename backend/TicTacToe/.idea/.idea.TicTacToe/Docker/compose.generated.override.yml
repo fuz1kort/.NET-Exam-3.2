@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  tictactoe:
+    build:
+      context: "C:\\Users\\gafar\\source\\fuz1kort\\.NET-Exam-3.2\\backend\\TicTacToe"
+      dockerfile: "TicTacToe/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/TicTacToe.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "tictactoe:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\gafar\\source\\fuz1kort\\.NET-Exam-3.2\\backend\\TicTacToe\\TicTacToe:/app:rw"
+    - "C:\\Users\\gafar\\source\\fuz1kort\\.NET-Exam-3.2\\backend\\TicTacToe:/src:rw"
+    - "C:\\Users\\gafar\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
